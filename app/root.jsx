@@ -6,12 +6,13 @@ import styles from "./tailwind.css"
 import HeaderItem from "./components/headerItem";
 import React from "react";
 import {Typography} from "./components/ui/typography";
+import toasts from "react-toastify/dist/ReactToastify.css"
 
 export const links = () => [
     ...(cssBundleHref ? [{rel: "stylesheet", href: cssBundleHref}] : []), {
         rel: "stylesheet",
         href: styles
-    }, {rel: "icon", type: "image/x-icon", sizes: "120x120", href: "/favicon.svg"}
+    }, {rel: "icon", type: "image/x-icon", sizes: "120x120", href: "/favicon.svg"}, {rel: "stylesheet", href: toasts}
 ];
 
 export const meta = () => {

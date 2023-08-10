@@ -11,50 +11,80 @@ import {Button} from "./ui/button";
 import {Label} from "./ui/label";
 import {Input} from "./ui/input";
 import {Textarea} from "./ui/textarea";
+import {useState} from "react";
+import {toast, ToastContainer} from "react-toastify";
 
 export default function ContactForm() {
+
+    const [form, setForm] = useState({})
+
+    async function handleSubmit(e) {
+        e.preventDefault()
+        const response = fetch("https://announce.fly.dev/add-job", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(form)
+        })
+
+        toast.promise(
+            response,
+            {
+                pending: 'Sending...',
+                success: 'Success, I will contact to you ASAP',
+                error: 'Failed, please contact me manually. Sorry for inconvenient'
+            }
+        )
+    }
+
     return (
-        <Dialog>
-            <DialogTrigger asChild><Button variant={"destructive"} className={"text-lg"}>Let me
-                contact
-                you</Button></DialogTrigger>
-            <DialogContent>
-                <DialogHeader>
-                    <DialogTitle className={"md:text-left"}>Contact Form</DialogTitle>
-                    <DialogDescription className={"md:text-left"}>
-                        Fill the form below and I will contact directly to you.
-                    </DialogDescription>
-                </DialogHeader>
-                <div className={"text-left flex flex-col gap-y-6"}>
-                    <div><Label htmlFor={"name"}>Your Name</Label>
-                        <Input type={"text"} id={"name"}
-                               placeholder={"Eg: Michael Schofield"}></Input>
-                    </div>
-                    <div>
-                        <Label htmlFor={"email"}>Email</Label>
-                        <Input type={"email"} id={"email"}
-                               placeholder={"Eg: example@gmail.com"}></Input>
-                    </div>
-                    <div>
-                        <Label htmlFor={"contact"}>Other contact</Label>
-                        <Input type={"email"} id={"contact"}
-                               placeholder={"Eg: discord: .demonducky, instagram: tuananh.lg"}></Input>
-                    </div>
-                    <div>
-                        <Label htmlFor={"service"}>What service do you need?</Label>
-                        <Input type={"text"} id={"service"}
-                               placeholder={"Eg: E-commerce website, spigot plugin,..."}></Input>
-                    </div>
-                    <div>
-                        <Label htmlFor={"information"}>Additional information</Label>
-                        <Textarea type={"text"} id={"information"}
-                                  placeholder={"Write anything you feel I need to know (not required)"}></Textarea>
-                    </div>
-                </div>
-                <DialogFooter>
-                    <Button>Send Request</Button>
-                </DialogFooter>
-            </DialogContent>
-        </Dialog>
+        <>
+            <ToastContainer/>
+            <Dialog>
+                <DialogTrigger asChild><Button variant={"destructive"} className={"text-lg"}>Let me
+                    contact
+                    you</Button></DialogTrigger>
+                <DialogContent>
+                    <DialogHeader>
+                        <DialogTitle className={"md:text-left"}>Contact Form</DialogTitle>
+                        <DialogDescription className={"md:text-left"}>
+                            Fill the form below and I will contact directly to you.
+                        </DialogDescription>
+                    </DialogHeader>
+                    <form onSubmit={handleSubmit}>
+                        <div className={"text-left flex flex-col gap-y-6 mb-6"}>
+                            <div><Label htmlFor={"name"}>Your Name</Label>
+                                <Input type={"text"} id={"name"} name={"name"} onChange={(e) => setForm({...form, [e.target.name]: e.target.value})}
+                                       placeholder={"Eg: Michael Schofield"}></Input>
+                            </div>
+                            <div>
+                                <Label htmlFor={"email"}>Email</Label>
+                                <Input type={"email"} id={"email"} name={"email"} onChange={(e) => setForm({...form, [e.target.name]: e.target.value})}
+                                       placeholder={"Eg: example@gmail.com"}></Input>
+                            </div>
+                            <div>
+                                <Label htmlFor={"contact"}>Other contact</Label>
+                                <Input type={"text"} id={"contact"} name={"contact"} onChange={(e) => setForm({...form, [e.target.name]: e.target.value})}
+                                       placeholder={"Eg: discord: .demonducky, instagram: tuananh.lg"}></Input>
+                            </div>
+                            <div>
+                                <Label htmlFor={"service"}>What service do you need?</Label>
+                                <Input type={"text"} id={"service"} name={"service"} onChange={(e) => setForm({...form, [e.target.name]: e.target.value})}
+                                       placeholder={"Eg: E-commerce website, spigot plugin,..."}></Input>
+                            </div>
+                            <div>
+                                <Label htmlFor={"information"}>Additional information</Label>
+                                <Textarea type={"text"} id={"information"} name={"information"} onChange={(e) => setForm({...form, [e.target.name]: e.target.value})}
+                                          placeholder={"Write anything you feel I need to know (not required)"}></Textarea>
+                            </div>
+                        </div>
+                        <DialogFooter>
+                            <Button type={"submit"}>Send Request</Button>
+                        </DialogFooter>
+                    </form>
+                </DialogContent>
+            </Dialog>
+        </>
     )
 }
