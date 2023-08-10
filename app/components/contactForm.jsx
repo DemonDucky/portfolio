@@ -60,7 +60,7 @@ export default function ContactForm() {
 
     return (
         <>
-            <ToastContainer position={"bottom-right"}/>
+            <ToastContainer/>
             <Dialog>
                 <DialogTrigger asChild><Button variant={"destructive"} className={"text-lg"}>Let me
                     contact
