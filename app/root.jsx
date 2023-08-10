@@ -17,7 +17,11 @@ export const links = () => [
 export const meta = () => {
     return [
         {title: "Tuan Anh Luong"},
-        {name: "description", content: "Welcome to Tuan Anh portfolio!"},
+        {name: "description", content: "I'm a software developer focusing on JS, TS & Kotlin!"},
+        {property: "og:image", content: "/images/og_image.svg"},
+        {property: "og:title", content: "Tuan Anh Luong"},
+        {property: "og:description", content: "I'm a software developer focusing on JS, TS & Kotlin!"},
+
     ];
 };
 
