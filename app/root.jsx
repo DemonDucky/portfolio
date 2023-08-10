@@ -42,8 +42,8 @@ export default function App() {
                 <HeaderItem link={"/contact"}>Contact</HeaderItem>
             </nav>
             <nav className={"hidden lg:grid px-4 py-2 bg-baseBackground fixed w-full rounded-b-lg h-16 place-items-center grid-cols-3"}>
-                <Typography variant={"h5"} className={"place-self-start my-auto"}>luong.tuananh.biz@gmail.com</Typography>
-                <Typography variant={"h5"}>Tuan Anh Luong</Typography>
+                <Typography variant={"h5"} className={"place-self-start my-auto font-normal-text font-normal"}>luong.tuananh.biz@gmail.com</Typography>
+                <Typography variant={"h5"} className={"font-normal-text font-normal"}>Tuan Anh Luong</Typography>
                 <div className={"h-full place-self-end flex"}>
                     <HeaderItem link={"/"}>Home</HeaderItem>
                     <HeaderItem link={"/about"}>About</HeaderItem>
