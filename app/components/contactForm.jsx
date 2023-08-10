@@ -26,28 +26,28 @@ export default function ContactForm() {
                     </DialogDescription>
                 </DialogHeader>
                 <div className={"text-left flex flex-col gap-y-6"}>
-                    <div><Label htmlFor={"need"}>Your Name</Label>
-                        <Input type={"text"} id={"need"}
+                    <div><Label htmlFor={"name"}>Your Name</Label>
+                        <Input type={"text"} id={"name"}
                                placeholder={"Eg: Michael Schofield"}></Input>
                     </div>
                     <div>
-                        <Label htmlFor={"need"}>Email</Label>
-                        <Input type={"email"} id={"need"}
+                        <Label htmlFor={"email"}>Email</Label>
+                        <Input type={"email"} id={"email"}
                                placeholder={"Eg: example@gmail.com"}></Input>
                     </div>
                     <div>
-                        <Label htmlFor={"need"}>Other contact</Label>
-                        <Input type={"email"} id={"need"}
+                        <Label htmlFor={"contact"}>Other contact</Label>
+                        <Input type={"email"} id={"contact"}
                                placeholder={"Eg: discord: .demonducky, instagram: tuananh.lg"}></Input>
                     </div>
                     <div>
-                        <Label htmlFor={"need"}>What services do you need?</Label>
-                        <Input type={"text"} id={"need"}
+                        <Label htmlFor={"service"}>What service do you need?</Label>
+                        <Input type={"text"} id={"service"}
                                placeholder={"Eg: E-commerce website, spigot plugin,..."}></Input>
                     </div>
                     <div>
-                        <Label htmlFor={"need"}>Additional information</Label>
-                        <Textarea type={"text"} id={"need"}
+                        <Label htmlFor={"information"}>Additional information</Label>
+                        <Textarea type={"text"} id={"information"}
                                   placeholder={"Write anything you feel I need to know (not required)"}></Textarea>
                     </div>
                 </div>

@@ -32,7 +32,7 @@ export default function App() {
         </head>
         <body className={"font-normal-text text-baseText bg-baseBackground"}>
         <header>
-            <nav className={"lg:hidden px-4 py-2 bg-baseBackground fixed w-full grid grid-cols-3 gap-x-2 rounded-b-lg h-16"}>
+            <nav className={"lg:hidden px-4 py-2 bg-baseBackground fixed w-full place-items-center grid grid-cols-3 gap-x-2 rounded-b-lg h-16"}>
                 <HeaderItem link={"/"}>Home</HeaderItem>
                 <HeaderItem link={"/about"}>About</HeaderItem>
                 <HeaderItem link={"/contact"}>Contact</HeaderItem>

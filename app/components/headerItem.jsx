@@ -1,10 +1,15 @@
-import {Button} from "./ui/button";
-import {Link} from "@remix-run/react";
+import {NavLink} from "@remix-run/react";
 
 export default function HeaderItem({children, link}) {
 
     return (
-        <Button variant={"ghost"} className={"px-4 mx-4 py-0 h-full"} asChild><Link className={"text-lg"} to={link}>{children}</Link></Button>
+        <NavLink className={({isActive}) => (
+            isActive ? "text-pink-600 inline-block" : "inline-block"
+        )} to={link}>
+            <p className={"px-4 mx-4 py-2 text-lg h-full text-center lg:hover:bg-gray-100 rounded-lg"}>
+                {children}
+            </p>
+        </NavLink>
     )
 
 }
