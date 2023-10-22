@@ -72,15 +72,15 @@ export default function QR() {
                 </div>
                     <div className={"text-white"}>
                         <QrText title={"Ngân Hàng"}>TPBank</QrText>
-                        <QrText title={"Chủ Tài Khoản"}>{data.name}</QrText>
-                        <QrText title={"Số Tài Khoản"}>{data.accountNumber}</QrText>
+                        <QrText title={"Chủ TK"}>{data.name}</QrText>
+                        <QrText title={"Số TK"}>{data.accountNumber}</QrText>
                         <hr className={"my-3"}/>
                         <QrText title={"Số Tiền"}>{Number(data.amount).toLocaleString()} VND</QrText>
                         <QrText title={"Nội Dung"} margin={false}>{data.content}</QrText>
                     </div>
             </div>
             <div className={"px-2 w-full"}>
-                <div>
+                <div className={"mb-2"}>
                     <Label htmlFor={"amount"}>Số Tiền</Label>
                     <Input type={"number"} id={"amount"} name={"amount"} data-field={"amount"} defaultValue={data.amount} min={1000} max={999999999}
                            onChange={(e) => changeHandler(e)}
@@ -101,7 +101,7 @@ export default function QR() {
 function QrText({title, children, margin = true}) {
 
     return (
-        <div className={`flex justify-between ${margin ?? "mb-1"}`}>
+        <div className={`flex justify-between ${margin ? "mb-2" : null}`}>
             <p className={"text-gray-900 text-xs"}>{title}:</p>
             <p className={"font-bold"}>{children}</p>
         </div>
