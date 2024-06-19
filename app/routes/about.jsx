@@ -1,27 +1,42 @@
-import {Typography} from "../components/ui/typography";
-import Wrapper from "../components/wrapper";
+import { Typography } from '../components/ui/typography'
+import Wrapper from '../components/wrapper'
 
 export default function About() {
-    return (
-        <div>
-            <Typography variant={"h1"} className={"text-center mt-16 mb-32"}>About Me</Typography>
-            <Wrapper className={"lg:w-full max-w-7xl lg:mx-auto text-baseBlackText"}>
-                <Typography variant={"p"}>
-                    I'm Tuan Anh Luong, a passionate web developer from Viet Nam.
-                </Typography>
-                <Typography variant={"p"}>
-                    I provide many common services for custom website, Shopify & Minecraft server. My target is to make
-                    sure that all my products are smooth, beauty design and have a good UX.
-                </Typography>
-                <Typography variant={"p"}>
-                    I'm currently only focus on React and framework built on on top of React, like Remix.js & Next.js.
-                </Typography>
-                <Typography variant={"p"}>
-                    With Minecraft plugin development, I'm using Kotlin as the main programming language to make sure it
-                    has
-                    as little as possible problem at runtime.
-                </Typography>
-            </Wrapper>
-        </div>
-    )
+  return (
+    <div>
+      <Typography variant={'h1'} className={'text-center mt-16 mb-32'}>
+        About Me
+      </Typography>
+      <Wrapper className={'lg:w-full max-w-7xl lg:mx-auto text-baseBlackText'}>
+        <Typography variant={'p'}>
+          Hey there! I'm a dynamic marketer crafting compelling narratives that captivate audiences and propel brands.
+          With a deep grasp of consumer behavior, I specialize in creating strategic campaigns that resonate and drive
+          real results.
+        </Typography>
+
+        <Typography variant={'p'}>
+          My expertise lies in blending creativity and data to develop impactful strategies across channels. From
+          captivating content and visuals to targeted social media campaigns and effective SEO, I leverage diverse tools
+          to ensure maximum brand visibility and engagement.
+        </Typography>
+
+        <Typography variant={'p'}>
+          I meticulously analyze performance, continually optimizing strategies for maximum ROI. My collaborative
+          approach aligns marketing efforts with business objectives, fostering strong cross-functional partnerships.
+        </Typography>
+
+        <Typography variant={'p'}>
+          Whether launching a new product, revitalizing a brand, or driving lead generation and conversion, I thrive on
+          delivering innovative, tailored marketing solutions. With a proven track record across industries, I bring a
+          fresh perspective and wealth of experience to every project.
+        </Typography>
+
+        <Typography variant={'p'}>
+          Guided by a passion for storytelling and persuasion, I'm committed to crafting unforgettable brand experiences
+          that resonate with audiences and drive tangible business growth. Ready to elevate your marketing game? Let's
+          connect!
+        </Typography>
+      </Wrapper>
+    </div>
+  )
 }

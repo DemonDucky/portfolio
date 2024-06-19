@@ -68,7 +68,7 @@ export default function QR() {
         <div className={"max-w-2xl mx-auto flex flex-col items-center"}>
             <div className={"p-6 rounded-lg bg-emerald-400"}>
                 <div className={"bg-white p-2 rounded-lg mb-4"}>
-                    <QRCodeCanvas value={finalResult} size={256} className={"block mx-auto"}/>
+                    <QRCodeCanvas value={finalResult} size={256} className={"block mx-auto"} />
                 </div>
                     <div className={"text-white"}>
                         <QrText title={"Ngân Hàng"}>TPBank</QrText>
